@@ -1,0 +1,152 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dung Store</title>
+    <link rel="StyleSheet" href="./css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <header style="background: tomato;">
+        <h1 style="color: yellow;">Dung Store</h1>
+        <h3>Khách hàng là thượng đế !</h3>
+    </header>
+    <nav>
+        <ul>
+            <li><a data-section="home">Home</a></li>
+            <li><a data-section="services">Services</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Products</a>
+                <div class="dropdown-content">
+                    <a data-section="link1">Giày</a>
+                    <a data-section="link2">Áo Đấu</a>
+                    <a data-section="link3">Phụ kiện</a>
+                </div>
+            </li>
+            <li><a data-section="video">Video</a></li>
+            <li style="float:right"><a data-section="about">About us</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hideable-section">
+        <div style="margin-top:20px;">
+            <h3 style="border-bottom:5px ;color:red">CONTENT</h3>
+        </div>
+        <div >
+				
+				<div >
+					<a href="#">
+						<img src="images/giay.jpg" style="width:200px;height:200px;"/>
+						<h1>Giày Sport</h1>
+					</a>
+				</div>
+				<div >
+					<a href="#">
+						<img src="images/aomu.jpg" style="width:200px;height:200px;"/>
+						<h1>Áo thi đấu</h1>
+					</a>
+				</div>
+				<div >
+					<a href="#">
+						<img src="images/phukien.png" style="width:200px;height:200px;"/>
+						<h1>Phụ kiện</h1>
+					</a>
+				</div>
+				
+            </div>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Shipping & Return</a></li>
+                <li><a href="#">Pricacy Notice</a></li>
+                <li><a href="#">Conditions of Use</a></li>
+                <li><a href="#">RSS</a></li>
+            </ul>
+    </section>
+
+    <section id="services" class="hideable-section">
+        <div>Services content</div>
+    </section>
+
+    <section id="about" class="hideable-section">
+        <div>About content</div>
+    </section>
+
+    <section id="link1" class="hideable-section">
+        <div style="font-size: 60px; color: red;">Giày</div>
+        <div id="product" >
+            <div class="product">
+                <div class="product_left">
+                    <img src="images/giay.jpg" style="width:200px;height:200px;">
+                </div>
+                <div class="product_right">
+                    <h2 style="color: black;">Giày đá bóng </h2>
+                    <h3 style="color: black;">$30.00</h3>
+                    <p>Sản phẩm ôm chân, dễ chịu, thoải mái khi chơi bóng</p>
+                    
+                </div>
+            </div>
+    </section>
+
+    <section id="link2" class="hideable-section">
+        <div style="font-size: 60px; color: red;">Áo đấu Manchester United</div>
+        <div id="product" >
+            <div class="product">
+                <div class="product_left">
+                    <img src="images/aomu.jpg" style="width:200px;height:200px;">
+                </div>
+                <div class="product_right">
+                    <h2 style="color: black;">Áo đấu </h2>
+                    <h3 style="color: black;">$100.00</h3>
+                    <p>Kiểu dáng đẹp, chất liệu nhập khẩu, thoáng mát khi thi đấu</p>
+                    
+                </div>
+            </div>
+    </section>
+
+    <section id="link3" class="hideable-section">
+        <div style="font-size: 60px; color: red;">Phụ kiện</div>
+        <div id="product" >
+            <div class="product">
+                <div class="product_left">
+                    <img src="images/phukien.png" style="width:200px;height:200px;">
+                </div>
+                <div class="product_right">
+                    <h2 style="color: black;">Phụ kiện </h2>
+                    <h3 style="color: black;">$20.00</h3>
+                    <p>Sử dụng để bổ trợ khi thi đấu, tránh những chấn thương</p>
+                    
+                </div>
+            </div>
+    </section>
+    <section id="video" class="hideable-section">
+        <div style="font-size: 60px; color: red;">Video giới thiệu sản phẩm</div>
+        <div>
+            <iframe width="420" height="345" src="https://www.youtube.com/watch?v=LkmYeE6iYqg">
+            </iframe>
+            
+        </div>
+    </section>
+    
+
+    <script>
+        $(function() {
+            $('nav ul li a').click(function() {
+                // Lấy section để hiển thị
+                var $section = $('#' + $(this).data('section'));
+
+                // Nếu đang hiện thì không làm gì.
+                // Nếu không, ẩn tất cả các se cho hiện (kiểu fade in) phần mong muốn.
+                if (!$section.is(':visible')) {
+                    $('.hideable-section').hide();
+                    $section.fadeIn();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
